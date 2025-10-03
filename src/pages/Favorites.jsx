@@ -37,7 +37,7 @@ function Favorites() {
                 className="w-50 h-50 object-contain mb-4"
               />
               <button
-                className="absolute top-4 -right-5 text-xl p-1.5"
+                className=" cursor-pointer absolute top-4 -right-5 text-xl p-1.5"
                 onClick={(e) => removeLiked(e, product.id)}
               >
                 <FaHeart color="red" />
