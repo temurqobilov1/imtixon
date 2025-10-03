@@ -1,12 +1,9 @@
 import {
-  About,
   Cart,
-  Contact,
   Home,
   Login,
   Profile,
   Register,
-  AllProducts,
   SingleProduct,
   Favorites,
 } from "./pages";
@@ -39,14 +36,6 @@ function App() {
           element: <Home />,
         },
         {
-          path: "/about",
-          element: <About />,
-        },
-        {
-          path: "/contact",
-          element: <Contact />,
-        },
-        {
           path: "/profile",
           element: <Profile />,
         },
@@ -58,10 +47,7 @@ function App() {
           path: "/favorites",
           element: <Favorites />,
         },
-        {
-          path: "/allproducts",
-          element: <AllProducts />,
-        },
+
         {
           path: "/singleProduct/:id",
           element: <SingleProduct />,

@@ -69,7 +69,7 @@ const Register = () => {
             label="Password"
           />
           <div className="pt-1">
-            <button className="btn btn-primary w-full text-[16px] h-9 rounded-md">
+            <button className="btn text-[#fff] bg-[#011c47] w-full text-[16px] h-9 rounded-md">
               Sign Up
             </button>
           </div>

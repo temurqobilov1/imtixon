@@ -32,7 +32,7 @@ function Profile() {
         </p>
         <button
           onClick={handleLogout}
-          className="mt-6 btn btn-primary w-[170px] sm:w-[250px] h-9 rounded-md text-[16px]"
+          className="mt-6 btn text-[#fff] bg-[#011c47] w-[170px] sm:w-[250px] h-9 rounded-md text-[16px]"
         >
           Logout
         </button>

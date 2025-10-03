@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
 import SearchPage from "../pages/SearchPage";
+import Hero from "../components/hero";
+import SectionEnd from "../components/SectionEnd";
 
 function Home() {
   const [products, setProducts] = useState([]);
@@ -58,8 +60,8 @@ function Home() {
 
   return (
     <section className="p-6">
+      <Hero/>
       <SearchPage products={products} />
-
       {products.length < totalProducts && (
         <div className="flex justify-center mt-8">
           <button
@@ -71,6 +73,7 @@ function Home() {
           </button>
         </div>
       )}
+      <SectionEnd/>
     </section>
   );
 }

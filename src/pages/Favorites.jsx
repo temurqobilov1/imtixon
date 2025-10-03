@@ -15,9 +15,9 @@ function Favorites() {
   if (likedProducts.length === 0) {
     return (
       <h2 className="flex flex-col items-center justify-center text-center mt-15 sm:mt-25 text-gray-500">
-        <FaHeartBroken className="text-4xl sm:text-5xl text-blue-500 mb-3 animate-bounce" />
+        <FaHeartBroken className="text-4xl sm:text-5xl text-red-600 mb-3 animate-bounce" />
         <p className="flex items-center gap-2 text-lg sm:text-2xl">
-          <FaHeart className="text-blue-500 text-xl sm:text-2xl" /> Saralangan
+          <FaHeart className="text-red-500 text-xl sm:text-2xl" /> Saralangan
           mahsulotlar yo‘q
         </p>
         <p className="text-xs sm:text-sm mt-3">Iltimos, mahsulot qo'shing</p>
@@ -40,31 +40,29 @@ function Favorites() {
                 className="absolute top-4 -right-5 text-xl p-1.5"
                 onClick={(e) => removeLiked(e, product.id)}
               >
-                <FaHeart color="blue" />
+                <FaHeart color="red" />
               </button>
             </div>
             <ul className="card-body shadow hover:shadow-2xl">
               <li className="card-title line-clamp-1">{product.title}</li>
-              <li className="line-clamp-2">{product.description}</li>
-              <div className="flex gap-3 text-[18px]">
-                <span className="line-through">
-                  {formatPrice((Number(product.price) || 0) + 1)}
-                </span>
-                <span className="text-green-600 font-400">
-                  {formatPrice(Number(product.price) || 0)}
-                </span>
+              <div className="flex items-center justify-between ">
+                <div className="flex flex-col gap-1">
+                  <span className="text-lg font-400">
+                    {formatPrice(Number(product.price) || 0)}
+                  </span>
+                  <span className="line-through text-sm text-gray-400">
+                    {formatPrice((Number(product.price) || 0) + 1)}
+                  </span>
+                </div>
+                <button
+                  onClick={(e) =>
+                    handleCartSubmit(e, product, products, dispatch)
+                  }
+                  className="w-[40px] h-[40px] border border-gray-500 rounded-full flex items-center cursor-pointer justify-center mt-3"
+                >
+                  <img src="/basket.svg" alt="" width={30} />
+                </button>
               </div>
-              <h2 className="flex gap-2">
-                ⭐{product.rating} ({(Number(product.stock) || 0) + 20} sold)
-              </h2>
-              <button
-                onClick={(e) =>
-                  handleCartSubmit(e, product, products, dispatch)
-                }
-                className="btn btn-primary ml-auto mr-auto w-full h-8 rounded-lg transition-normal hover:bg-blue-700 hover:border-b-blue-700"
-              >
-                Buy Now
-              </button>
             </ul>
           </div>
         </Link>
