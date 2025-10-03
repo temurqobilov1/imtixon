@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import SearchPage from "../pages/SearchPage";
-import Hero from "../components/hero";
+import Hero from "../components/Hero";
 import SectionEnd from "../components/SectionEnd";
 
 function Home() {
